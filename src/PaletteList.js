@@ -7,14 +7,11 @@ export default class PaletteList extends Component {
         const { palettes } = this.props;
         return (
             <div className="PaletteList">
-                <MiniPalette />
                 <h1>React Colors</h1>
 
                 {palettes.map(palette => (
                     <p>
-                        <Link to={`/palette/${palette.id}`}>
-                            {palette.paletteName}
-                        </Link>
+                        <MiniPalette {...palette} />
                     </p>
                 ))}
             </div>
