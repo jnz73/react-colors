@@ -1,11 +1,11 @@
-.ColorBox {
+/* .ColorBox {
     width: 20%;
     height: 25%;
     display: inline-block;
     position: relative;
     cursor: pointer;
     margin-bottom: -3.5px;
-}
+} */
 
 .SingleColorPalette .ColorBox {
     height: 50%;
@@ -60,7 +60,7 @@
 }
 
 .ColorBox .dark-text {
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(, 0, 0, 0.5);
 }
 .see-more {
     background: rgba(255, 255, 255, 0.3);
