@@ -58,7 +58,7 @@ class SingleColorPalette extends Component {
                     </div>
                 </div>
                 <PaletteFooter
-                    paletteName={this.props.palette.id}
+                    paletteName={this.props.palette.paletteName}
                     emoji={this.props.palette.emoji}
                 />
             </div>
