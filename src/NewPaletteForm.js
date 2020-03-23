@@ -289,7 +289,7 @@ class NewPaletteForm extends Component {
                             color="primary"
                             style={{
                                 backgroundColor: paletteFull
-                                    ? 'gray'
+                                    ? ''
                                     : this.state.currentColor
                             }}
                             type="submit"
