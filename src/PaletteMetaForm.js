@@ -8,6 +8,8 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import NewPaletteForm from './NewPaletteForm';
+import { Picker } from 'emoji-mart';
+import 'emoji-mart/css/emoji-mart.css';
 
 export default class PaletteMetaForm extends Component {
     constructor(props) {
@@ -43,23 +45,23 @@ export default class PaletteMetaForm extends Component {
 
     render() {
         const { open, newPaletteName } = this.state;
+        const { hideForm, handleSubmit } = this.props;
         return (
             <Dialog
                 open={open}
-                onClose={this.handleClose}
                 aria-labelledby="form-dialog-title"
+                onClose={hideForm}
             >
                 <DialogTitle id="form-dialog-title">
                     Choose A Palette Name
                 </DialogTitle>
-                <ValidatorForm
-                    onSubmit={() => this.props.handleSubmit(newPaletteName)}
-                >
+                <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
                     <DialogContent>
                         <DialogContentText>
                             Please enter a name for your new palette. Make sure
                             it's unique.
                         </DialogContentText>
+                        <Picker />
                         <TextValidator
                             name="newPaletteName"
                             onChange={this.handleChange}
@@ -75,7 +77,7 @@ export default class PaletteMetaForm extends Component {
                         />
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={this.handleClose} color="primary">
+                        <Button onClick={hideForm} color="primary">
                             Cancel
                         </Button>
                         <Button
