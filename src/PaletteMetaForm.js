@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import NewPaletteForm from './NewPaletteForm';
 import { Picker } from 'emoji-mart';
 import 'emoji-mart/css/emoji-mart.css';
 
@@ -55,13 +53,13 @@ export default class PaletteMetaForm extends Component {
         this.props.handleSubmit(newPalette);
     }
     render() {
-        const { open, newPaletteName } = this.state;
-        const { hideForm, handleSubmit } = this.props;
+        const { stage, newPaletteName } = this.state;
+        const { hideForm } = this.props;
         return (
             <div>
                 <Dialog
                     title="Pick a Palette Emoji"
-                    open={this.state.stage === 'emoji'}
+                    open={stage === 'emoji'}
                     onClose={hideForm}
                 >
                     <DialogTitle id="form-dialog-title">
@@ -73,7 +71,7 @@ export default class PaletteMetaForm extends Component {
                     />
                 </Dialog>
                 <Dialog
-                    open={this.state.stage === 'form'}
+                    open={stage === 'form'}
                     aria-labelledby="form-dialog-title"
                     onClose={hideForm}
                 >
@@ -92,7 +90,7 @@ export default class PaletteMetaForm extends Component {
                                 label="Palette Name"
                                 fullWidth
                                 margin="normal"
-                                value={this.state.newPaletteName}
+                                value={newPaletteName}
                                 validators={['required', 'isPaletteNameUnique']}
                                 errorMessages={[
                                     'this field is required',
