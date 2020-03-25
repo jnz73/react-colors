@@ -1,4 +1,3 @@
-import { Opacity } from '@material-ui/icons';
 export default {
     root: {
         backgroundColor: 'white',
@@ -39,7 +38,6 @@ export default {
         position: 'relative',
         marginBottom: '-3.5px'
     },
-    delete: {},
     deleteIcon: {
         color: 'white',
         backgroundColor: 'red',
