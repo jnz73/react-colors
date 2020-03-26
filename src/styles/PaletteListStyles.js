@@ -50,9 +50,10 @@ export default {
         width: '100%',
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 30%)',
-        gridGap: '2.5rem',
+        gridGap: '5%',
         [sizes.down('md')]: {
-            gridTemplateColumns: 'repeat(2,50%)'
+            gridTemplateColumns: 'repeat(2, 48%)',
+            gridGap: '4%'
         },
         [sizes.down('xs')]: {
             gridTemplateColumns: 'repeat(1,100%)',
