@@ -66,7 +66,7 @@ class Navbar extends Component {
                     autoHideDuration={3000}
                     message={
                         <span id="message-id">
-                            Format Changed To {this.state.format.toUpperCase()}!
+                            Format Changed To {format.toUpperCase()}!
                         </span>
                     }
                     ContentProps={{ 'aria-describedby': 'message-id' }}
