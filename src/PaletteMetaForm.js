@@ -51,6 +51,7 @@ export default class PaletteMetaForm extends Component {
             emoji: newEmoji.native
         };
         this.props.handleSubmit(newPalette);
+        this.setState({ stage: '' });
     }
     render() {
         const { stage, newPaletteName } = this.state;
